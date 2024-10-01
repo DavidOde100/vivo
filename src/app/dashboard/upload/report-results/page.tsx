@@ -62,7 +62,7 @@ const Chatbot = ({ summary }: { summary: string }) => {
       {response && (
         <div className="bg-gray-100 p-4 rounded shadow">
           <h3 className="font-semibold">Chatbot Response:</h3>
-          <p>{response}</p>
+          <p className="text-black">{response}</p> {/* Changed to black */}
         </div>
       )}
     </div>
@@ -88,7 +88,7 @@ const ReportResultsPage = () => {
             <h2 className="text-3xl font-bold text-blue-600 mb-6">PDF Summary</h2>
 
             {summary ? (
-              <p className="whitespace-pre-line leading-relaxed text-gray-800">
+              <p className="whitespace-pre-line leading-relaxed text-black"> {/* Changed to black */}
                 {summary}
               </p>
             ) : (
@@ -105,4 +105,3 @@ const ReportResultsPage = () => {
 };
 
 export default ReportResultsPage;
-
