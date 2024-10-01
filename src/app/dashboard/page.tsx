@@ -48,19 +48,19 @@ const DashboardPage = () => {
             <h2 className="text-2xl font-semibold text-purple-800 mb-4">Activity Center</h2>
             <div className="grid grid-cols-2 gap-4 text-center">
               <div>
-                <p className="text-4xl font-bold text-purple-900">50</p>
+                <p className="text-4xl font-bold text-purple-900">0</p>
                 <p className="text-md text-purple-700">Uploads</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-purple-900">45</p>
+                <p className="text-4xl font-bold text-purple-900">0</p>
                 <p className="text-md text-purple-700">Chats</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-purple-900">25</p>
+                <p className="text-4xl font-bold text-purple-900">0</p>
                 <p className="text-md text-purple-700">Notes</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-purple-900">50</p>
+                <p className="text-4xl font-bold text-purple-900">0</p>
                 <p className="text-md text-purple-700">Results</p>
               </div>
             </div>
@@ -79,11 +79,11 @@ const DashboardPage = () => {
 
         {/* Latest Lab Report Section */}
         <div className="bg-white p-4 rounded-xl shadow-lg">
-          <h2 className="text-2xl font-semibold text-purple-700 mb-4">Latest Lab Report</h2>
+          <h2 className="text-2xl font-semibold text-purple-700 mb-4">Latest Lab Report (Coming Soon) </h2>
           <div className="mb-4">
-            <p className="text-xl font-bold text-purple-700">Rubella / Measles</p>
+            <p className="text-xl font-bold text-purple-700">Coming Soon</p>
             <p className="text-sm text-gray-600">
-              Summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer egestas magna id magnis...
+              Summary: Coming Soon
             </p>
           </div>
 
@@ -98,9 +98,9 @@ const DashboardPage = () => {
                 height={100}
                 className="rounded-lg"
               />
-              <p className="text-lg text-purple-800 mt-2">Rubella</p>
-              <p className="text-sm text-gray-500">Reference Interval: Immune &gt; 0.99</p>
-              <p className="text-md text-purple-900 font-bold">Results: Immune</p>
+              <p className="text-lg text-purple-800 mt-2">Coming Soon </p>
+              <p className="text-sm text-gray-500">Coming Soon</p>
+              <p className="text-md text-purple-900 font-bold">Coming Soon</p>
             </div>
 
             {/* Lab Report 2 */}
@@ -112,9 +112,9 @@ const DashboardPage = () => {
                 height={100}
                 className="rounded-lg"
               />
-              <p className="text-lg text-purple-800 mt-2">Measles</p>
-              <p className="text-sm text-gray-500">Reference Interval: Immune &gt; 16.4</p>
-              <p className="text-md text-purple-900 font-bold">Results: Immune</p>
+              <p className="text-lg text-purple-800 mt-2">Coming Soon</p>
+              <p className="text-sm text-gray-500">Coming Soon</p>
+              <p className="text-md text-purple-900 font-bold">Coming Soon</p>
             </div>
 
             {/* Lab Report 3 */}
@@ -126,9 +126,9 @@ const DashboardPage = () => {
                 height={100}
                 className="rounded-lg"
               />
-              <p className="text-lg text-purple-800 mt-2">Mumps</p>
-              <p className="text-sm text-gray-500">Reference Interval: Immune &gt; 12.5</p>
-              <p className="text-md text-purple-900 font-bold">Results: Immune</p>
+              <p className="text-lg text-purple-800 mt-2">Coming Soon</p>
+              <p className="text-sm text-gray-500">Coming Soon</p>
+              <p className="text-md text-purple-900 font-bold">Coming Soon</p>
             </div>
 
             {/* Lab Report 4 */}
@@ -140,9 +140,9 @@ const DashboardPage = () => {
                 height={100}
                 className="rounded-lg"
               />
-              <p className="text-lg text-purple-800 mt-2">Rubella</p>
-              <p className="text-sm text-gray-500">Reference Interval: Immune &gt; 0.99</p>
-              <p className="text-md text-purple-900 font-bold">Results: Immune</p>
+              <p className="text-lg text-purple-800 mt-2">Coming Soon</p>
+              <p className="text-sm text-gray-500">Coming Soon</p>
+              <p className="text-md text-purple-900 font-bold">Coming Soon</p>
             </div>
           </div>
         </div>
