@@ -5,6 +5,16 @@ import Sidebar from "@/components/dashboard/Sidebar";
 import Navbar from "@/components/dashboard/DashboardNavbar";
 import { useState } from "react";
 
+// Lab Results Component
+const LabResults = ({ labResults }: { labResults: string }) => {
+  return (
+    <div className="bg-white shadow-lg rounded-lg p-4">
+      <h2 className="text-xl font-semibold text-blue-600 mb-3">Lab Results</h2>
+      <p className="whitespace-pre-line leading-relaxed text-black">{labResults}</p>
+    </div>
+  );
+};
+
 // Chatbot Component
 const Chatbot = ({ summary }: { summary: string }) => {
   const [question, setQuestion] = useState('');
@@ -42,9 +52,9 @@ const Chatbot = ({ summary }: { summary: string }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 mt-6">
-      <h2 className="text-xl font-semibold text-blue-600 mb-4">Ask Questions About the Summary</h2>
-      <form onSubmit={handleSubmit} className="mb-4">
+    <div className="bg-white shadow-lg rounded-lg p-4 mt-4">
+      <h2 className="text-lg font-semibold text-blue-600 mb-3">Ask Questions About the Summary</h2>
+      <form onSubmit={handleSubmit} className="mb-3">
         <textarea
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
@@ -60,7 +70,7 @@ const Chatbot = ({ summary }: { summary: string }) => {
         </button>
       </form>
       {response && (
-        <div className="bg-gray-100 p-4 rounded shadow">
+        <div className="bg-gray-100 p-3 rounded shadow">
           <h3 className="font-semibold">Chatbot Response:</h3>
           <p className="text-black">{response}</p> {/* Changed to black */}
         </div>
@@ -72,21 +82,30 @@ const Chatbot = ({ summary }: { summary: string }) => {
 const ReportResultsPage = () => {
   const searchParams = useSearchParams();
   const summary = searchParams.get("summary"); // Extract the summary from the URL
+  const labResults = searchParams.get("labResults"); // Extract the lab results from the URL
 
   return (
     <div className="flex h-screen bg-white"> {/* Changed background to white */}
       {/* Sidebar */}
       <Sidebar />
 
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col">
         {/* Navbar */}
         <Navbar />
 
-        {/* Main content */}
-        <div className="flex-1 flex items-center justify-center overflow-y-auto p-8 bg-white"> {/* Center the content */}
-          <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-10"> {/* Centered and width adjusted */}
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">PDF Summary</h2>
+        {/* Main content - Centered Card */}
+        <div className="flex-1 flex items-center justify-center h-screen bg-white"> {/* Centering using Flexbox */}
+          <div className="w-full h-auto min-h-[50vh] min-w-[50vw] lg:max-w-[80vw] lg:max-h-[80vh] bg-white shadow-lg rounded-lg p-6 overflow-y-auto"> {/* Dynamic width/height based on screen size */}
+            
+            {/* Lab Results Section */}
+            {labResults ? (
+              <LabResults labResults={labResults} />
+            ) : (
+              <p>No lab results available</p>
+            )}
 
+            {/* PDF Summary Section */}
+            <h2 className="text-2xl font-bold text-blue-600 mb-4 mt-4">PDF Summary</h2>
             {summary ? (
               <p className="whitespace-pre-line leading-relaxed text-black"> {/* Changed to black */}
                 {summary}
