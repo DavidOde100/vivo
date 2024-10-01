@@ -39,7 +39,7 @@ const UploadPage = () => {
     setIsLoading(true); // Set loading state
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/upload", {
+      const response = await fetch("http://127.0.0.1:8000/upload", {
         method: "POST",
         body: formData,
       });
@@ -64,20 +64,20 @@ const UploadPage = () => {
   const encodedSummary = summary ? encodeURIComponent(summary) : "";
 
   return (
-    <div className="flex">
+    <div className="flex bg-white min-h-screen"> {/* Set background to white */}
       {/* Sidebar */}
       <Sidebar />
 
-      <div className="flex-1 flex flex-col ml-64"> {/* Ensure content doesn’t overlap the sidebar */}
+      <div className="flex-1 flex flex-col items-center justify-start"> {/* Ensure the content doesn’t overlap the sidebar */}
         {/* Navbar */}
         <Navbar />
 
         {/* Main content */}
-        <div className="flex flex-row items-start justify-center m-6 gap-6">
-          {/* Form Container */}
-          <div className="bg-white shadow-md p-10 rounded-2xl w-96">
+        <div className="flex flex-col items-center justify-center m-6 gap-6 w-full">
+          {/* File Upload Container */}
+          <div className="bg-white shadow-md p-10 rounded-2xl w-full max-w-md"> {/* Limited width and centered */}
             {!file ? (
-              <label className="cursor-pointer flex flex-col items-center justify-center h-64 w-full bg-blue-50 rounded-lg border-dashed border-2 border-blue-300 hover:bg-blue-100 transition">
+              <label className="cursor-pointer flex flex-col items-center justify-center h-64 w-full bg-gray-100 rounded-lg border-dashed border-2 border-blue-300 hover:bg-gray-200 transition">
                 <FaFileUpload className="text-blue-600 text-4xl mb-4" />
                 <span className="text-lg text-blue-600 font-semibold">
                   Upload PDF/DOCX
@@ -106,10 +106,10 @@ const UploadPage = () => {
 
           {/* Form to submit the report */}
           <form
-            className="bg-white shadow-md p-10 rounded-2xl w-96"
+            className="bg-white shadow-md p-10 rounded-2xl w-full max-w-md" // Full width for form, centered
             onSubmit={handleSubmit}
           >
-            <h2 className="text-center text-2xl font-semibold text-blue-600 mb-6">
+            <h2 className="text-center text-2xl font-semibold text-black mb-6"> {/* Changed to black */}
               Fill Report Details
             </h2>
 
@@ -149,9 +149,11 @@ const UploadPage = () => {
 
           {/* Display Summary */}
           {summary && (
-            <div className="bg-white shadow-md p-5 rounded-lg w-96">
-              <h3 className="font-semibold">PDF Summary:</h3>
-              <p>{summary}</p>
+            <div className="bg-white shadow-md p-5 rounded-lg w-full max-w-md mt-6 overflow-y-auto max-h-64"> {/* Scrollable container with max height */}
+              <h3 className="font-semibold text-black"> {/* Changed to black */}
+                PDF Summary:
+              </h3>
+              <p className="text-black">{summary}</p> {/* Changed to black */}
               <Link
                 href={`/dashboard/upload/report-results?summary=${encodedSummary}`}
                 className="text-blue-600 underline"

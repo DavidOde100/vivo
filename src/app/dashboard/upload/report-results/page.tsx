@@ -74,7 +74,7 @@ const ReportResultsPage = () => {
   const summary = searchParams.get("summary"); // Extract the summary from the URL
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-white"> {/* Changed background to white */}
       {/* Sidebar */}
       <Sidebar />
 
@@ -83,8 +83,8 @@ const ReportResultsPage = () => {
         <Navbar />
 
         {/* Main content */}
-        <div className="flex-1 overflow-y-auto p-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-10">
+        <div className="flex-1 flex items-center justify-center overflow-y-auto p-8 bg-white"> {/* Center the content */}
+          <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-10"> {/* Centered and width adjusted */}
             <h2 className="text-3xl font-bold text-blue-600 mb-6">PDF Summary</h2>
 
             {summary ? (
@@ -105,3 +105,4 @@ const ReportResultsPage = () => {
 };
 
 export default ReportResultsPage;
+
